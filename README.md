@@ -12,7 +12,9 @@
 - fzf
 - bat
 - ripgrep
+
 - alacritty
+- Hack font
 
 ### Node.js / React.js / JavaScript / TypeScript
 
