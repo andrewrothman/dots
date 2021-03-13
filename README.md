@@ -1,2 +1,29 @@
-# dots
-Personal dotfiles for maximum [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)).
+# dotfiles
+
+## Tools
+
+### General
+
+- git
+- stow
+- tmux
+- nvim
+- tree
+- fzf
+- bat
+- ripgrep
+- alacritty
+
+### Node.js / React.js / JavaScript / TypeScript
+
+- n
+- deno
+
+## Setup
+
+```bash
+git clone git@github.com:andrewrothman/dots.git
+cd dots
+
+stow nvim -t ~
+```
