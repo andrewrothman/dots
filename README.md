@@ -28,4 +28,5 @@ git clone git@github.com:andrewrothman/dots.git
 cd dots
 
 stow nvim -t ~
+stow alacritty -t 
 ```
