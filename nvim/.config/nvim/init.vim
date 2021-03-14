@@ -11,7 +11,15 @@ set number relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-" plugins
+" file chooser
+let g:netrw_banner=0 " disable file finder annoying banner
+let g:netrw_browse_split=4 " open in prior window
+let g:netrw_altv=1 " open splits to the right
+
+" mouse mode
+set mouse=a " enable mouse in all modes
+
+"plugins
 call plug#begin()
 
 Plug 'chriskempson/base16-vim'
@@ -26,8 +34,11 @@ Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
-" color scheme
-colorscheme base16-grayscale-dark
+" theme
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 " fzf hotkey
 nnoremap <C-p> :Files<CR>
