@@ -7,7 +7,7 @@
 - git
 - stow
 - tmux
-- nvim
+- nvim & vim-plug
 - tree
 - fzf
 - bat
