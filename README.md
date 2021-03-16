@@ -29,4 +29,5 @@ cd dots
 
 stow nvim -t ~
 stow alacritty -t 
+stow tmux -t ~
 ```
