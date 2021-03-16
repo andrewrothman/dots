@@ -19,7 +19,7 @@ let g:netrw_altv=1 " open splits to the right
 " mouse mode
 set mouse=a " enable mouse in all modes
 
-"plugins
+" plugins
 call plug#begin()
 
 Plug 'chriskempson/base16-vim'
@@ -31,6 +31,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
