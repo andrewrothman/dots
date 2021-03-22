@@ -2,7 +2,6 @@ set shiftwidth=4
 set tabstop=4
 
 " hybrid line numbers
-
 set number relativenumber
 
 :augroup numbertoggle
@@ -47,6 +46,14 @@ nnoremap <C-p> :Files<CR>
 " coc config:
 " accept first completion on Enter
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+
+" vim-coc
+" GoTo code navigation.
+set updatetime=300 " reduce delays (default is 4000 ms = 4s)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " let g:deoplete#enable_at_startup = 1
 
