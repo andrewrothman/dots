@@ -18,6 +18,9 @@ let g:netrw_altv=1 " open splits to the right
 " mouse mode
 set mouse=a " enable mouse in all modes
 
+" use system clipboard
+set clipboard+=unnamedplus
+
 " plugins
 call plug#begin()
 
