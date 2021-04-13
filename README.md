@@ -12,9 +12,12 @@
 - fzf
 - bat
 - ripgrep
+- efm-langserver
+- gh
 
 - alacritty
-- Hack font
+- Ioseveka Fixed
+- karabiner (for mac)
 
 ### Node.js / React.js / JavaScript / TypeScript
 
@@ -30,4 +33,8 @@ cd dots
 stow nvim -t ~
 stow alacritty -t 
 stow tmux -t ~
+stow efm-langserver -t ~
+
+# on mac
+stow karabiner -t ~
 ```

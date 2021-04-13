@@ -8,8 +8,8 @@
 #
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
-#import:
-#  - /path/to/alacritty.yml
+import:
+  - ~/.config/alacritty/csi-u.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -46,8 +46,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 50
-    y: 50
+    x: 20
+    y: 30
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -102,7 +102,7 @@ window:
   #multiplier: 3
 
 # Font configuration
-#font:
+font:
   # Normal (roman) font face
   normal:
     # Font family
@@ -111,7 +111,8 @@ window:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Hack
+    # family: Hack
+      family: Iosevka Fixed
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -150,36 +151,36 @@ window:
     #style: Bold Italic
 
   # Point size
-  size: 12.0
+  size: 13.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
-  #offset:
+  # offset:
   #  x: 0
   #  y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
   # right, increasing `y` moves the glyph upward.
-  #glyph_offset:
-  #  x: 0
-  #  y: 0
+  # glyph_offset:
+  #   x: 0
+  #   y: 0
 
   # Thin stroke font rendering (macOS only)
   #
   # Thin strokes are suitable for retina displays, but for non-retina screens
   # it is recommended to set `use_thin_strokes` to `false`.
-  #use_thin_strokes: true
+  # use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
-#colors:
+colors:
   # Default colors
-  #primary:
-  #  background: '#1d1f21'
+  primary:
+    background: '#101010'
   #  foreground: '#c5c8c6'
 
     # Bright and dim foreground colors
@@ -421,8 +422,8 @@ window:
 #   - (Windows) powershell
 shell:
   program: /usr/local/bin/tmux
-#  args:
-#    - --login
+  # args:
+  #  - --login
 
 # Startup directory
 #
@@ -721,7 +722,7 @@ shell:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+# key_bindings:
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
