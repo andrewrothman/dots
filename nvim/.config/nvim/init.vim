@@ -159,6 +159,17 @@ nnoremap <leader>E :Ex .<CR>
 " easy commands in normal mode
 noremap <CR> :
 
+" also remap <CR> as ':' in netrw (replace it with space)
+augroup netrw_mapping
+    autocmd!
+    autocmd filetype netrw call NetrwMapping()
+augroup END
+
+function! NetrwMapping()
+	nmap <buffer> <Space> <Plug>NetrwLocalBrowseCheck
+    nmap <buffer> <CR> :
+endfunction
+
 " easy indent shift
 nnoremap <leader>] >>
 nnoremap <leader>[ <<
