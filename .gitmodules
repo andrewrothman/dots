@@ -1,0 +1,59 @@
+[submodule "nvim/.local/share/nvim/site/pack/base16-vim/start/base16-vim"] 
+  path = nvim/.local/share/nvim/site/pack/base16-vim/start/base16-vim
+  url = https://github.com/chriskempson/base16-vim
+
+[submodule "nvim/.local/share/nvim/site/pack/editorconfig-vim/start/editorconfig-vim"] 
+  path = nvim/.local/share/nvim/site/pack/editorconfig-vim/start/editorconfig-vim
+  url = https://github.com/editorconfig/editorconfig-vim
+
+[submodule "nvim/.local/share/nvim/site/pack/nvim-compe/start/nvim-compe"] 
+  path = nvim/.local/share/nvim/site/pack/nvim-compe/start/nvim-compe
+  url = https://github.com/hrsh7th/nvim-compe
+
+[submodule "nvim/.local/share/nvim/site/pack/nvim-lightbulb/start/nvim-lightbulb"] 
+  path = nvim/.local/share/nvim/site/pack/nvim-lightbulb/start/nvim-lightbulb
+  url = https://github.com/kosayoda/nvim-lightbulb
+
+[submodule "nvim/.local/share/nvim/site/pack/nvim-lsp/start/nvim-lsp"] 
+  path = nvim/.local/share/nvim/site/pack/nvim-lsp/start/nvim-lsp
+  url = https://github.com/glacambre/nvim-lsp
+
+[submodule "nvim/.local/share/nvim/site/pack/nvim-treesitter/start/nvim-treesitter"] 
+  path = nvim/.local/share/nvim/site/pack/nvim-treesitter/start/nvim-treesitter
+  url = https://github.com/nvim-treesitter/nvim-treesitter
+
+[submodule "nvim/.local/share/nvim/site/pack/nvim-ts-context-commentstring/start/nvim-tn-context-commentstring"] 
+  path = nvim/.local/share/nvim/site/pack/nvim-ts-context-commentstring/start/nvim-ts-context-commentstring
+  url = https://github.com/JoosepAlviste/nvim-ts-context-commentstring
+
+[submodule "nvim/.local/share/nvim/site/pack/plenary.nvim/start/plenary.nvim"] 
+  path = nvim/.local/share/nvim/site/pack/plenary.nvim/start/plenary.nvim
+  url = https://github.com/nvim-lua/plenary.nvim
+
+[submodule "nvim/.local/share/nvim/site/pack/popup.nvim/start/popup.nvim"] 
+  path = nvim/.local/share/nvim/site/pack/popup.nvim/start/popup.nvim
+  url = https://github.com/nvim-lua/popup.nvim
+
+[submodule "nvim/.local/share/nvim/site/pack/telescope.nvim/start/telescope.nvim"] 
+  path = nvim/.local/share/nvim/site/pack/telescope.nvim/start/telescope.nvim
+  url = https://github.com/nvim-telescope/telescope.nvim
+
+[submodule "nvim/.local/share/nvim/site/pack/vim-commentary/start/vim-commentary"] 
+  path = nvim/.local/share/nvim/site/pack/vim-commentary/start/vim-commentary
+  url = https://github.com/tpope/vim-commentary
+
+[submodule "nvim/.local/share/nvim/site/pack/vim-fugitive/start/vim-fugitive"] 
+  path = nvim/.local/share/nvim/site/pack/vim-fugitive/start/vim-fugitive
+  url = https://github.com/tpope/vim-fugitive
+
+[submodule "nvim/.local/share/nvim/site/pack/vim-gitgutter/start/vim-gitgutter"] 
+  path = nvim/.local/share/nvim/site/pack/vim-gitgutter/start/vim-gitgutter
+  url = https://github.com/airblade/vim-gitgutter
+
+[submodule "nvim/.local/share/nvim/site/pack/vim-vsnip/start/vim-vsnip"] 
+  path = nvim/.local/share/nvim/site/pack/vim-vsnip/start/vim-vsnip
+  url = https://github.com/hrsh7th/vim-vsnip
+
+[submodule "nvim/.local/share/nvim/site/pack/vim-vsnip-integ/start/vim-vsnip-integ"] 
+  path = nvim/.local/share/nvim/site/pack/vim-vsnip-integ/start/vim-vsnip-integ
+  url = https://github.com/hrsh7th/vim-vsnip-integ
