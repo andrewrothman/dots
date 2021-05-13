@@ -4,7 +4,7 @@ set updatetime=100
 set clipboard+=unnamedplus " use system clipboard
 set title " change title (useful for tmux <prefix>-w
 set showcmd " show normal mode commands in bottom left
-nnoremap <Space> <Nop>
+set nojoinspaces " single-spaces to separate sentences (formatting)
 :let mapleader=" "
 
 " config
@@ -60,7 +60,7 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files()<cr>
 
 " saving
-nnoremap <leader>s up<CR>
+nnoremap <leader>s :up<CR>
 
 " splits
 set splitbelow " horizontal split new buffers below
