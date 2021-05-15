@@ -8,8 +8,10 @@ set nojoinspaces " single-spaces to separate sentences (formatting)
 :let mapleader=" "
 
 " config
+
 :command Cfe :e $MYVIMRC
 :command Cfs :source $MYVIMRC
+
 " history
 
 set history=1000 " remember more commands in history
@@ -21,6 +23,7 @@ set undofile " persist undos to a file for use in subsequent sessions
 nnoremap U <C-r> " redo... overrides a weird default
 
 " centered cursor (almost always)
+
 augroup VCenterCursor
 	au!
 	au BufEnter,WinEnter,WinNew,VimResized *,*.*
@@ -49,20 +52,31 @@ set autoindent
 set smartindent
 
 " buffer search
+
 set smartcase " case-insensitive unless a cap char is entered
 nnoremap <silent> <esc> :nohlsearch<CR> " clear with Escape
 
 " moar search
+
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files()<cr>
 
+" open telescope on startup with empty buffer
+
+augroup ProjectDrawer
+    autocmd!
+    autocmd VimEnter * if argc() == 0 | exe 'Telescope find_files' | endif
+augroup END
+
 " saving
+
 nnoremap <leader>s :up<CR>
 
 " splits
+
 set splitbelow " horizontal split new buffers below
 set splitright " vertical split new buffers to the right
 
@@ -72,6 +86,7 @@ let g:netrw_banner=0 " disable file finder annoying banner
 let g:netrw_altv=1 " open splits to the right
 
 " just for now... to get used to no arrow keys
+
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -101,7 +116,8 @@ endif
 " https://www.reddit.com/r/neovim/comments/l00zzb/improve_style_of_builtin_lsp_diagnostic_messages/
 
 function! s:base16_customize() abort
-	call Base16hi("Comment", "abd4bc", "", "", "", "", "")
+	" call Base16hi("Comment", "abd4bc", "", "", "", "", "") " cyan
+	call Base16hi("Comment", "d4abc6", "", "", "", "", "") " pink
 	call Base16hi("GitGutterAddLineNr", "7bad76", "252525", "", "", "", "")
 	call Base16hi("GitGutterChangeLineNr", "9776ad", "252525", "", "", "", "")
 	call Base16hi("GitGutterDeleteLineNr", "ad7976", "252525", "", "", "", "")
@@ -229,10 +245,12 @@ EOF
 " map <C-l> <C-w>l
 
 " easy move lines
+
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 " easily switch between buffers
+
 " nnoremap <silent> H :bp<CR>
 " nnoremap <silent> L :bn<CR>
 
@@ -246,6 +264,7 @@ imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-T
 smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 
 " git commit messages
+
 au FileType gitcommit setlocal textwidth=72
 au FileType gitcommit setlocal colorcolumn=50,72
 au FileType gitcommit setlocal spell
