@@ -57,3 +57,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/vim-vsnip-integ/start/vim-vsnip-integ"] 
   path = nvim/.local/share/nvim/site/pack/vim-vsnip-integ/start/vim-vsnip-integ
   url = https://github.com/hrsh7th/vim-vsnip-integ
+[submodule "nvim/.local/share/nvim/site/pack/telescope-fzy-native.nvim/start/telescope-fzy-native.nvim"]
+	path = nvim/.local/share/nvim/site/pack/telescope-fzy-native.nvim/start/telescope-fzy-native.nvim
+	url = https://github.com/nvim-telescope/telescope-fzy-native.nvim

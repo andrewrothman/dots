@@ -58,17 +58,21 @@ nnoremap <silent> <esc> :nohlsearch<CR> " clear with Escape
 
 " moar search
 
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({}))<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({}))<cr>
+
+lua << EOF
+require('telescope').load_extension('fzy_native')
+EOF
 
 " open telescope on startup with empty buffer
 
 augroup ProjectDrawer
     autocmd!
-    autocmd VimEnter * if argc() == 0 | exe 'Telescope find_files' | endif
+    autocmd VimEnter * if argc() == 0 | exe 'Telescope find_files theme=get_dropdown' | endif
 augroup END
 
 " saving

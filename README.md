@@ -2,27 +2,31 @@
 
 ## Tools
 
-### General
+### Required
 
 - git
 - stow
 - tmux
-- nvim & vim-plug
-- tree
-- fzf
-- bat
-- ripgrep
-- efm-langserver
-- gh
+- neovim
+- fzy
+- hub
 
 - alacritty
 - Ioseveka Fixed
+
+### Optional
+
+- tree
+- ripgrep
+- bat
+- fzf
 - karabiner (for mac)
 
 ### Node.js / React.js / JavaScript / TypeScript
 
 - n
 - deno
+- efm-langserver
 
 ## Setup
 
