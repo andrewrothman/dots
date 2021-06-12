@@ -66,3 +66,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/lsp_signature.nvim/start/lsp_signature.nvim"]
 	path = nvim/.local/share/nvim/site/pack/lsp_signature.nvim/start/lsp_signature.nvim
 	url = https://github.com/ray-x/lsp_signature.nvim
+[submodule "nvim/.local/share/nvim/site/pack/vim-git/start/vim-git"]
+	path = nvim/.local/share/nvim/site/pack/vim-git/start/vim-git
+	url = https://github.com/tpope/vim-git
