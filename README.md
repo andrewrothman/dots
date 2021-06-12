@@ -42,3 +42,11 @@ stow efm-langserver -t ~
 # on mac
 stow karabiner -t ~
 ```
+
+## Manual
+
+Update NeoVim submodules:
+
+```bash
+git submodule foreach git pull
+```
