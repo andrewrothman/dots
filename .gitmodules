@@ -60,3 +60,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/telescope-fzy-native.nvim/start/telescope-fzy-native.nvim"]
 	path = nvim/.local/share/nvim/site/pack/telescope-fzy-native.nvim/start/telescope-fzy-native.nvim
 	url = https://github.com/nvim-telescope/telescope-fzy-native.nvim
+[submodule "nvim/.local/share/nvim/site/pack/trouble.nvim/start/trouble.nvim"]
+	path = nvim/.local/share/nvim/site/pack/trouble.nvim/start/trouble.nvim
+	url = https://github.com/folke/trouble.nvim

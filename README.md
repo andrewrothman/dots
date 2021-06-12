@@ -45,7 +45,12 @@ stow karabiner -t ~
 
 ## Manual
 
-Update NeoVim submodules:
+Add a NeoVim plugin:
+```bash
+git submodule add https://github.com/folke/trouble.nvim nvim/.local/share/nvim/site/pack/trouble.nvim/start/trouble.nvim
+```
+
+Update NeoVim plugin:
 
 ```bash
 git submodule foreach git pull
