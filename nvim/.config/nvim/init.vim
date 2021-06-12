@@ -92,10 +92,10 @@ let g:netrw_altv=1 " open splits to the right
 
 " just for now... to get used to no arrow keys
 
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+map <Up> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+map <Down> <Nop>
 
 " cursor column guides
 
