@@ -87,3 +87,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/lsp-colors.nvim/start/lsp-colors.nvim"]
 	path = nvim/.local/share/nvim/site/pack/lsp-colors.nvim/start/lsp-colors.nvim
 	url = https://github.com/folke/lsp-colors.nvim
+[submodule "nvim/.local/share/nvim/site/pack/numb.nvim/start/numb.nvim"]
+	path = nvim/.local/share/nvim/site/pack/numb.nvim/start/numb.nvim
+	url = https://github.com/nacro90/numb.nvim
