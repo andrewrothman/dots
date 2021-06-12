@@ -126,9 +126,6 @@ function! s:base16_customize() abort
 	call Base16hi("GitGutterAddLineNr", "7bad76", "252525", "", "", "", "")
 	call Base16hi("GitGutterChangeLineNr", "9776ad", "252525", "", "", "", "")
 	call Base16hi("GitGutterDeleteLineNr", "ad7976", "252525", "", "", "", "")
-	call Base16hi("LspDiagnosticsVirtualTextHint", "FFFFFF", "", "", "", "", "")
-	call Base16hi("LspDiagnosticsVirtualTextError", "FF0000", "", "", "", "", "")
-	call Base16hi("LspDiagnosticsVirtualTextWarning", "FFFF00", "", "", "", "", "")
 endfunction
 
 augroup on_change_colorschema
