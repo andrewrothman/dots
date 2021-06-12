@@ -78,7 +78,7 @@ augroup END
 
 " saving
 
-nnoremap <leader>s :up<CR>
+nnoremap <leader>s :wa<CR>
 
 " splits
 
