@@ -199,7 +199,17 @@ lua << EOF
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require'lspconfig'.tsserver.setup { capabilities = capabilities }
+require'lspconfig'.tsserver.setup {
+	capabilities = capabilities,
+	on_attach = function(client, bufnr)
+		require "lsp_signature".on_attach({
+			bind = true, -- This is mandatory, otherwise border config won't get registered.
+			handler_opts = {
+				border = "single"
+			}
+		})
+	end,
+}
 
 require'lspconfig'.efm.setup{
 	filetypes = {

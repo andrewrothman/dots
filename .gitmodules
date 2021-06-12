@@ -63,3 +63,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/trouble.nvim/start/trouble.nvim"]
 	path = nvim/.local/share/nvim/site/pack/trouble.nvim/start/trouble.nvim
 	url = https://github.com/folke/trouble.nvim
+[submodule "nvim/.local/share/nvim/site/pack/lsp_signature.nvim/start/lsp_signature.nvim"]
+	path = nvim/.local/share/nvim/site/pack/lsp_signature.nvim/start/lsp_signature.nvim
+	url = https://github.com/ray-x/lsp_signature.nvim
