@@ -54,6 +54,7 @@ set smartindent
 " buffer search
 
 set smartcase " case-insensitive unless a cap char is entered
+set ignorecase " needed for smartcase
 nnoremap <silent> <esc> :nohlsearch<CR> " clear with Escape
 
 " moar search
