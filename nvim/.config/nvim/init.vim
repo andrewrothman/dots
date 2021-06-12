@@ -149,6 +149,10 @@ set statusline+=%{StatuslineGit()}
 set statusline+=%#LineNr#
 set statusline+=\ %f
 set statusline+=%m
+" todo: this would be cool... check the help, and maybe try it in lua?
+" only want to show when available, with space before name, and with a good
+" color
+" set statusline+=%{nvim_treesitter#statusline()}
 set statusline+=%=
 set statusline+=%#CursorColumn#
 set statusline+=\ %p%%

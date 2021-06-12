@@ -69,3 +69,18 @@
 [submodule "nvim/.local/share/nvim/site/pack/vim-git/start/vim-git"]
 	path = nvim/.local/share/nvim/site/pack/vim-git/start/vim-git
 	url = https://github.com/tpope/vim-git
+[submodule "nvim/.local/share/nvim/site/pack/vim-speeddating/start/vim-speeddating"]
+	path = nvim/.local/share/nvim/site/pack/vim-speeddating/start/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating
+[submodule "nvim/.local/share/nvim/site/pack/vim-speeddating/start/vim-unimpaired"]
+	path = nvim/.local/share/nvim/site/pack/vim-speeddating/start/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
+[submodule "nvim/.local/share/nvim/site/pack/vim-surround/start/vim-surround"]
+	path = nvim/.local/share/nvim/site/pack/vim-surround/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "nvim/.local/share/nvim/site/pack/vim-unimpaired/start/vim-unimpaired"]
+	path = nvim/.local/share/nvim/site/pack/vim-unimpaired/start/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
+[submodule "nvim/.local/share/nvim/site/pack/repeat/start/vim-repeat"]
+	path = nvim/.local/share/nvim/site/pack/repeat/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat
