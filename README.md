@@ -13,7 +13,6 @@
 - [fish](https://fishshell.com)
 	- [fisher](https://github.com/jorgebucaran/fisher)
 	- [fzf.fish](https://github.com/PatrickF1/fzf.fish)
-	- [done](https://github.com/franciscolourenco/done)
 - [pfetch](https://github.com/dylanaraps/pfetch)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
 
