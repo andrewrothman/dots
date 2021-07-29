@@ -201,6 +201,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 require'lspconfig'.tsserver.setup {
+	-- found in a reddit comment:
+	-- root_dir = lspconfig.util.root_pattern("yarn.lock", "lerna.json", ".git"),
+	settings = { documentFormatting = true },
 	capabilities = capabilities,
 	on_attach = function(client, bufnr)
 		require "lsp_signature".on_attach({
