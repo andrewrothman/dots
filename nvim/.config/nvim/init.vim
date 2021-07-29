@@ -233,6 +233,8 @@ nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> [d    <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> ]d    <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 " code actions
 autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()
