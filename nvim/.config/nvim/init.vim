@@ -22,14 +22,6 @@ set undolevels=1000 " remember more actions for undo
 set undofile " persist undos to a file for use in subsequent sessions
 nnoremap U <C-r> " redo... overrides a weird default
 
-" centered cursor (almost always)
-
-augroup VCenterCursor
-	au!
-	au BufEnter,WinEnter,WinNew,VimResized *,*.*
-				\ let &scrolloff=winheight(win_getid())/2
-augroup END
-
 " hybrid line numbers
 
 " todo: buffer exit and enter without lines (like in help docs) should be
