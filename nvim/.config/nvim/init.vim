@@ -104,9 +104,9 @@ set colorcolumn=80,120
 
 " git signs
 
-set signcolumn=yes
-let g:gitgutter_signs = 0
-let g:gitgutter_highlight_linenrs = 1
+lua << EOF
+require('gitsigns').setup()
+EOF
 
 " theme
 
@@ -123,9 +123,9 @@ endif
 function! s:base16_customize() abort
 	" call Base16hi("Comment", "abd4bc", "", "", "", "", "") " cyan
 	call Base16hi("Comment", "d4abc6", "", "", "", "", "") " pink
-	call Base16hi("GitGutterAddLineNr", "7bad76", "252525", "", "", "", "")
-	call Base16hi("GitGutterChangeLineNr", "9776ad", "252525", "", "", "", "")
-	call Base16hi("GitGutterDeleteLineNr", "ad7976", "252525", "", "", "", "")
+	call Base16hi("GitSignsAdd", "7bad76", "252525", "", "", "", "")
+	call Base16hi("GitSignsChange", "9776ad", "252525", "", "", "", "")
+	call Base16hi("GitSignsDelete", "ad7976", "252525", "", "", "", "")
 endfunction
 
 augroup on_change_colorschema

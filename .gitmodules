@@ -46,10 +46,6 @@
   path = nvim/.local/share/nvim/site/pack/vim-fugitive/start/vim-fugitive
   url = https://github.com/tpope/vim-fugitive
 
-[submodule "nvim/.local/share/nvim/site/pack/vim-gitgutter/start/vim-gitgutter"] 
-  path = nvim/.local/share/nvim/site/pack/vim-gitgutter/start/vim-gitgutter
-  url = https://github.com/airblade/vim-gitgutter
-
 [submodule "nvim/.local/share/nvim/site/pack/vim-vsnip/start/vim-vsnip"] 
   path = nvim/.local/share/nvim/site/pack/vim-vsnip/start/vim-vsnip
   url = https://github.com/hrsh7th/vim-vsnip
@@ -90,3 +86,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/numb.nvim/start/numb.nvim"]
 	path = nvim/.local/share/nvim/site/pack/numb.nvim/start/numb.nvim
 	url = https://github.com/nacro90/numb.nvim
+[submodule "nvim/.local/share/nvim/site/pack/gitsigns.nvim/start/gitsigns.nvim"]
+	path = nvim/.local/share/nvim/site/pack/gitsigns.nvim/start/gitsigns.nvim
+	url = https://github.com/lewis6991/gitsigns.nvim
