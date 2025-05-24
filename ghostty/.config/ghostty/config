@@ -1,0 +1,45 @@
+# managed by brew
+auto-update = off
+
+window-save-state = never
+shell-integration-features = no-cursor
+cursor-style = block
+quit-after-last-window-closed = true
+macos-titlebar-style = native
+
+window-width = 90
+window-height = 28
+
+window-new-tab-position = end
+window-inherit-font-size = false
+window-padding-x = 30
+window-padding-y = 30
+# window-padding-color = extend
+
+theme = "light:OneHalfLight,dark:0x96f"
+# theme = light:"3024 Day",dark:"3024 Night"
+# theme = "light:OneHalfLight,dark:Adventure"
+# theme = "Blazer"
+# theme = "Material"
+# theme = "dark:mellow,light:Material"
+# primary, Tomorrow, Terminal Basic, iTerm2 Tango Light, iceberg-light, CLRS
+
+font-family = "Monaspace Xenon"
+# font-family = "Atkinson Hyperlegible Mono"
+# font-family = "Vga Unicode"
+# font-family = "Departure Mono"
+font-size = 20
+font-style="Regular"
+# font-style="Bold"
+font-thicken=true
+# adjust-underline-position = 15%
+
+# disable ligatures
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+# mouse-scroll-multiplier = 2
+# selection-background = "#00FFFF"

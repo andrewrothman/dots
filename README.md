@@ -16,8 +16,8 @@
 - [pfetch](https://github.com/dylanaraps/pfetch)
 - [zoxide](https://github.com/ajeetdsouza/zoxide)
 
-- alacritty
-- Ioseveka Fixed
+- ghostty
+- Monaspace fonts (esp. Xenon)
 
 ### Optional
 
@@ -34,6 +34,6 @@ cd dots
 
 stow fish -t ~
 stow nvim -t ~
-stow alacritty -t 
+stow ghostty -t ~
 stow tmux -t ~
 ```
