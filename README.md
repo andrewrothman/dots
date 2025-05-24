@@ -48,16 +48,3 @@ stow efm-langserver -t ~
 # on mac
 stow karabiner -t ~
 ```
-
-## Manual
-
-Add a NeoVim plugin:
-```bash
-git submodule add https://github.com/folke/trouble.nvim nvim/.local/share/nvim/site/pack/trouble.nvim/start/trouble.nvim
-```
-
-Update NeoVim plugin:
-
-```bash
-git submodule foreach git pull
-```
