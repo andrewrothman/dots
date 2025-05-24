@@ -26,12 +26,6 @@
 - bat
 - fzf
 
-### Node.js / React.js / JavaScript / TypeScript
-
-- n
-- deno
-- efm-langserver
-
 ## Setup
 
 ```bash
@@ -42,5 +36,4 @@ stow fish -t ~
 stow nvim -t ~
 stow alacritty -t 
 stow tmux -t ~
-stow efm-langserver -t ~
 ```
