@@ -6,6 +6,7 @@
 
 - git
 - stow
+- zsh
 - tmux
 - neovim
 - fzy
@@ -32,6 +33,7 @@
 git clone git@github.com:andrewrothman/dots.git
 cd dots
 
+stow zsh -t ~
 stow fish -t ~
 stow nvim -t ~
 stow ghostty -t ~
