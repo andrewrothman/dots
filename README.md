@@ -25,7 +25,6 @@
 - ripgrep
 - bat
 - fzf
-- karabiner (for mac)
 
 ### Node.js / React.js / JavaScript / TypeScript
 
@@ -44,7 +43,4 @@ stow nvim -t ~
 stow alacritty -t 
 stow tmux -t ~
 stow efm-langserver -t ~
-
-# on mac
-stow karabiner -t ~
 ```
