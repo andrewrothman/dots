@@ -1,0 +1,25 @@
+; [user]
+; 	name = ...
+; 	email = ...
+[alias]
+	reword = "commit --amend -n"
+[commit]
+	verbose = true
+[branch]
+	sort = -committerdate
+[rebase]
+	autosquash = true
+[push]
+	default = current
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+; [includeIf "gitdir:~/example/"]
+; 	path = ~/.config/git/config-example
