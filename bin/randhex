@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case "${1:-key}" in
+  id) entropy=8 ;;
+  pw) entropy=10 ;;
+  key) entropy=16 ;;
+  ''|*[!0-9]*) echo "Invalid input: must be a number, 'id', or 'pw', or 'key'."; exit 1 ;;
+  *) entropy=$1 ;;
+esac
+
+openssl rand -hex "$entropy"

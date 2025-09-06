@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Define consonants and vowels (following the proquint spec)
+consonants="bcdfghjklmnpqrstvwxyz"
+vowels="aeiou"
+
+# Function to generate a random character from a given string
+random_char() {
+  local chars="$1"
+  local length=${#chars}
+  # Generate a random index using openssl rand, and map it to the character set
+  local random_index=$(openssl rand -base64 1 | tr -d '/+' | head -c 1)
+  local rand_num=$(( 16#$(printf '%x' "'$random_index") ))  # Convert base64 index to decimal
+  echo ${chars:$(($rand_num % length)):1}
+}
+
+# Function to generate a single proquint password (CVCVC pattern)
+generate_proquint() {
+  local proquint=""
+  # Generate the CVCVC pattern (Consonant-Vowel-Consonant-Vowel-Consonant)
+  proquint+=$(random_char "$consonants")  # C
+  proquint+=$(random_char "$vowels")      # V
+  proquint+=$(random_char "$consonants")  # C
+  proquint+=$(random_char "$vowels")      # V
+  proquint+=$(random_char "$consonants")  # C
+
+  echo "$proquint"
+}
+
+# Function to generate a stronger password by combining multiple proquints
+generate_strong_password() {
+  local password=""
+  local num_proquints=4  # Generate 4 proquints (you can adjust the number)
+  local separator="-"    # Separator between proquints (you can change this if desired)
+
+  # Generate multiple proquints and combine them
+  for ((i=1; i<=num_proquints; i++)); do
+    local proquint=$(generate_proquint)
+    password+="$proquint"
+
+    # Add separator after each proquint, except the last one
+    if ((i < num_proquints)); then
+      password+="$separator"
+    fi
+  done
+
+  echo "$password"
+}
+
+# Generate and display the strong password
+generate_strong_password
