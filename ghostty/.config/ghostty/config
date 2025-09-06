@@ -1,20 +1,19 @@
-# managed by brew
-auto-update = off
-
 window-save-state = never
 shell-integration-features = no-cursor
 cursor-style = block
 quit-after-last-window-closed = true
 macos-titlebar-style = native
 
-window-width = 90
-window-height = 28
+window-width = 82
+window-height = 25
 
-window-new-tab-position = end
+window-padding-x = 16
+window-padding-y = 18
+
 window-inherit-font-size = false
-window-padding-x = 30
-window-padding-y = 30
-# window-padding-color = extend
+window-padding-balance = true
+window-new-tab-position = end
+
 
 theme = "light:OneHalfLight,dark:0x96f"
 # theme = light:"3024 Day",dark:"3024 Night"
@@ -28,7 +27,8 @@ font-family = "Monaspace Xenon"
 # font-family = "Atkinson Hyperlegible Mono"
 # font-family = "Vga Unicode"
 # font-family = "Departure Mono"
-font-size = 20
+# font-size: 14pt (because -3 is 11 and +3 is 17)
+font-size = 14
 font-style="Regular"
 # font-style="Bold"
 font-thicken=true
