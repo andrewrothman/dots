@@ -36,12 +36,5 @@ if [[ "$TERM_PROGRAM" == "win" ]]; then
 	PS1='zsh %# '
 fi
 
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":/Users/.zsh/completions:"* ]]; then export FPATH="/Users/ajr/.zsh/completions:$FPATH"; fi
-. "/Users/ajr/.deno/env"
 
-# bun completions
-[ -s "/Users/ajr/.bun/_bun" ] && source "/Users/ajr/.bun/_bun"
