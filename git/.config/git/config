@@ -2,19 +2,36 @@
 ; 	name = ...
 ; 	email = ...
 [alias]
-	reword = "commit --amend -n"
+	reword = "!git diff --cached --quiet && git commit --amend -n || (echo 'Staged changes present — reword aborted.' && exit 1)"
+	wip = "!git add -A && git commit -n -m 'WIP'"
 [commit]
 	verbose = true
 [branch]
 	sort = -committerdate
-[rebase]
-	autosquash = true
 [push]
+	# Sets git push to push only the current branch to its upstream tracking branch.
+	# Prevents accidentally pushing unrelated branches.
+	# Like the default "simple" (since git 2.0) but allows pushing new branches without explicitly setting tracking.
 	default = current
+	# default = matching could also be good, power-user and dangerous :) (all same-named branches)
 [pull]
+	# Makes git pull use rebase instead of merge to integrate upstream changes.
 	rebase = true
+[rebase]
+	# Automatically moves fixup! and squash! commits to their matching commit during an interactive rebase.
+	# Helps with `git commit --fixup`.
+	autosquash = true
+
+	# Automatically stashes local changes before rebasing, then restores them after.
+	# Avoids "cannot rebase with dirty working directory" errors.
+	autostash = true
 [fetch]
+	# Deletes remote-tracking branches that no longer exist on the remote during git fetch.
+	# Or, instead, could manually run `git fetch --prune` when needed.
 	prune = true
+[init]
+	# Sets new repos to create the default branch as "main" instead of "master".
+	defaultBranch = main
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
