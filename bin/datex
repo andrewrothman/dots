@@ -1,0 +1,76 @@
+#!/usr/bin/env python3
+
+import sys
+import argparse
+from datetime import datetime, timezone
+
+def get_local_time():
+    return datetime.now().astimezone()
+
+def get_utc_time():
+    return datetime.now(timezone.utc)
+
+def main():
+    now_local = get_local_time()
+    now_utc = get_utc_time()
+
+    # Primary mode functions
+    mode_funcs = {
+        "day": lambda: now_local.strftime("%Y-%m-%d"),
+        "dayu": lambda: now_utc.strftime("%Y-%m-%d"),
+        "time": lambda: now_local.isoformat(timespec='seconds'),
+        "timeu": lambda: now_utc.isoformat(timespec='seconds').replace("+00:00", "Z"),
+        "epoch": lambda: str(int(now_local.timestamp())),
+        "epochm": lambda: str(int(now_local.timestamp() * 1_000)),
+        "agenda": lambda: datetime.now().strftime("%a %b %d %Y"),
+        "agendatime": lambda: datetime.now().strftime("%b %d %Y %H:%M:%S"),
+    }
+
+    # Aliases
+    aliases = {
+        "d": "day",
+        "t": "time",
+        "du": "dayu",
+        "tu": "timeu",
+        "s": "epoch",
+        "ms": "epochm",
+        "a": "agenda",
+        "at": "agendatime",
+    }
+
+    # Merge aliases
+    all_modes = {**mode_funcs, **{k: mode_funcs[v] for k, v in aliases.items()}}
+
+    parser = argparse.ArgumentParser(
+        description="Print date/time in various ISO8601 formats.",
+        usage="datex [option]",
+        formatter_class=argparse.RawTextHelpFormatter
+    )
+
+    parser.add_argument("mode", nargs="?", default="time", help=(
+        "Modes:\n"
+        "  day (d)       Local date (YYYY-MM-DD)\n"
+        "  dayu (du)      UTC date (YYYY-MM-DD)\n"
+        "  time (t)     Local datetime with TZ offset (ISO8601)\n"
+        "  timeu (tu)  UTC datetime (ISO8601 with Z)\n"
+        "  epoch (s)       Seconds since epoch\n"
+        "  epochm (ms)     Milliseconds since epoch\n"
+        "  agenda (a)       Human-friendly date without time\n"
+        "  agendatime (at)       Human-friendly date with time but without seconds\n"
+    ))
+
+    if len(sys.argv) > 1 and sys.argv[1] == "--help":
+        parser.print_help()
+        sys.exit(0)
+
+    args = parser.parse_args()
+
+    try:
+        print(all_modes[args.mode]())
+    except KeyError:
+        print(f"Unknown mode: {args.mode}", file=sys.stderr)
+        parser.print_usage()
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
