@@ -25,7 +25,7 @@ vim.g.have_nerd_font = false
 -- [[ Setting options ]]
 -- see `:help vim.o`, `:help option-list`
 
--- vim.o.number = true
+vim.o.number = true
 vim.o.relativenumber = true
 vim.o.mouse = 'a'
 vim.o.showmode = false -- already in statusline
@@ -51,7 +51,7 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' } -- see `:help 'l
 
 vim.o.inccommand = 'split' -- previous substitutions as you type
 vim.o.cursorline = true
-vim.o.scrolloff = 10
+-- vim.o.scrolloff = 10
 vim.o.confirm = true -- prompt instead of failing commands due to unsaved changes
 
 vim.o.hlsearch = false
@@ -587,7 +587,7 @@ require('lazy').setup {
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        preset = 'default',
+        preset = 'enter',
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -600,9 +600,12 @@ require('lazy').setup {
       },
 
       completion = {
+        -- NOTE: some LSPs may add auto brackets themselves anyway
+        accept = { auto_brackets = { enabled = false }, },
+
         -- By default, you may press `<c-space>` to show the documentation.
         -- Optionally, set `auto_show = true` to show the documentation after a delay.
-        documentation = { auto_show = false, auto_show_delay_ms = 500 },
+        documentation = { auto_show = true, auto_show_delay_ms = 500 },
       },
 
       sources = {
@@ -627,9 +630,6 @@ require('lazy').setup {
       signature = { enabled = true },
     },
   },
-
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
   -- Collection of various small independent plugins/modules
   {
@@ -662,6 +662,21 @@ require('lazy').setup {
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
         return '%2l:%-2v'
+      end
+
+      ---@diagnostic disable-next-line: duplicate-set-field
+      statusline.section_git = function()
+        return ''
+      end
+
+      ---@diagnostic disable-next-line: duplicate-set-field
+      statusline.section_diff = function()
+        return ''
+      end
+
+      ---@diagnostic disable-next-line: duplicate-set-field
+      statusline.section_lsp = function()
+        return ''
       end
 
       -- ... and there is more!
@@ -871,5 +886,12 @@ vim.cmd [[
 
 -- nacro90/numb.nvim
 
+vim.api.nvim_create_user_command('YankPath', function()
+  local path = vim.fn.expand '%:p'
+  vim.fn.setreg('+', path)
+  vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {})
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
