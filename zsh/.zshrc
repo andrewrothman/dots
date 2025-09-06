@@ -5,9 +5,12 @@ source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 PROMPT='=> zsh !%! ?%? %n [%~] $ '
 
 alias v=nvim
+alias vv='nvim .'
 alias g=git
 alias qt="open -a 'quicktime player'"
 alias httpsrv="python3 -m http.server"
+
+function vf { nvim `fzf --select-1 -q "$1"` }
 
 function tmp {
 	# pushd $(mktemp -d /tmp/$1.XXXX)
