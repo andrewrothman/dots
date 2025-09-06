@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+
+import sys
+import argparse
+from urllib.parse import quote, unquote
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="URI encoder/decoder",
+        usage="urlenc [-d|--decode] [--help]"
+    )
+    parser.add_argument(
+        "-d", "--decode", action="store_true",
+        help="Decode instead of encode"
+    )
+
+    args = parser.parse_args()
+
+    for line in sys.stdin:
+        text = line.strip()
+        if args.decode:
+            print(unquote(text))
+        else:
+            print(quote(text))
+
+if __name__ == "__main__":
+    main()
