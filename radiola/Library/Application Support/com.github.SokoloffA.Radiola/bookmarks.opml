@@ -1,0 +1,10 @@
+<ompl version="2.0">
+    <head></head>
+    <body>
+        <outline text="SomaFM Groove Salad (128k AAC)" url="https://somafm.com/groovesalad130.pls" fav="true"></outline>
+        <outline text="SomaFM DEF CON Radio (128k AAC)" url="https://somafm.com/defcon130.pls" fav="true"></outline>
+        <outline text="SomaFM Bossa Beyond (128k AAC)" url="https://somafm.com/bossa130.pls"></outline>
+        <outline text="SomaFM Drone Zone (128k AAC)" url="https://somafm.com/dronezone130.pls"></outline>
+        <outline text="tilderadio (320k Ogg Vorbis)" url="https://azuracast.tilderadio.org/radio/8000/320k.ogg"></outline>
+    </body>
+</ompl>
