@@ -9,6 +9,12 @@ PROMPT='=> zsh !%! ?%? %n [%~] $ '
 alias v=nvim
 alias vv='nvim .'
 alias g=git
+alias l='ls -l'
+alias ll='ls -l'
+alias la='ls -la'
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
 alias cddk='cd $HOME/Desktop/'
 alias cddl='cd $HOME/Downloads/'
 alias qt="open -a 'quicktime player'"
