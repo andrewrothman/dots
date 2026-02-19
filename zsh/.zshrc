@@ -9,6 +9,8 @@ PROMPT='=> zsh !%! ?%? %n [%~] $ '
 alias v=nvim
 alias vv='nvim .'
 alias g=git
+alias cddk='cd $HOME/Desktop/'
+alias cddl='cd $HOME/Downloads/'
 alias qt="open -a 'quicktime player'"
 alias httpsrv="python3 -m http.server"
 
