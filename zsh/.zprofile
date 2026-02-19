@@ -33,6 +33,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # https://nodejs.org/docs/latest-v16.x/api/cli.html#node_pending_deprecation1
 # export NODE_PENDING_DEPRECATION=1
 
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
