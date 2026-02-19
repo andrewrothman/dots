@@ -38,6 +38,12 @@
 	# Diffs should be more readable compared to the default "myers" but with a slight cost in performance.
 	# See https://arxiv.org/abs/1902.02467 in-favor of "histogram".
 	algorithm = histogram
+[merge]
+	# Adds a base section when showing conflicts so you see the original content too.
+	# Improves context when resolving merge conflicts, but makes conflicts more verbose.
+	# Should make handling conflicts easier.
+	# "zdiff3" vs "diff3" - zealously move common lines out of the conflict
+	conflictStyle = zdiff3
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
