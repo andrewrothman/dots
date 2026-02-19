@@ -2,13 +2,40 @@
 
 import sys
 import argparse
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 def get_local_time():
     return datetime.now().astimezone()
 
 def get_utc_time():
     return datetime.now(timezone.utc)
+
+def get_monday_of_current_week(today):
+    return today - timedelta(days=today.weekday())
+
+def week_agendas():
+    today = datetime.now()
+    start_date = get_monday_of_current_week(today)
+    agendas = []
+
+    for i in range(7):  # Monday to Sunday
+        current = start_date + timedelta(days=i)
+        date_str = current.strftime("%a %b %d %Y")
+        agendas.append(date_str)
+
+    return "\n\n".join(agendas)
+
+def bweek_agendas():
+    today = datetime.now()
+    start_date = get_monday_of_current_week(today)
+    agendas = []
+
+    for i in range(5):  # Monday to Friday
+        current = start_date + timedelta(days=i)
+        date_str = current.strftime("%a %b %d %Y")
+        agendas.append(date_str)
+
+    return "\n\n".join(agendas)
 
 def main():
     now_local = get_local_time()
@@ -24,6 +51,8 @@ def main():
         "epochm": lambda: str(int(now_local.timestamp() * 1_000)),
         "agenda": lambda: datetime.now().strftime("%a %b %d %Y"),
         "agendatime": lambda: datetime.now().strftime("%b %d %Y %H:%M:%S"),
+        "week": week_agendas,
+        "bweek": bweek_agendas,
     }
 
     # Aliases
@@ -36,6 +65,8 @@ def main():
         "ms": "epochm",
         "a": "agenda",
         "at": "agendatime",
+        "w": "week",
+        "bw": "bweek",
     }
 
     # Merge aliases
@@ -49,14 +80,16 @@ def main():
 
     parser.add_argument("mode", nargs="?", default="time", help=(
         "Modes:\n"
-        "  day (d)       Local date (YYYY-MM-DD)\n"
-        "  dayu (du)      UTC date (YYYY-MM-DD)\n"
-        "  time (t)     Local datetime with TZ offset (ISO8601)\n"
-        "  timeu (tu)  UTC datetime (ISO8601 with Z)\n"
+        "  day (d)         Local date (YYYY-MM-DD)\n"
+        "  dayu (du)       UTC date (YYYY-MM-DD)\n"
+        "  time (t)        Local datetime with TZ offset (ISO8601)\n"
+        "  timeu (tu)      UTC datetime (ISO8601 with Z)\n"
         "  epoch (s)       Seconds since epoch\n"
         "  epochm (ms)     Milliseconds since epoch\n"
-        "  agenda (a)       Human-friendly date without time\n"
-        "  agendatime (at)       Human-friendly date with time but without seconds\n"
+        "  agenda (a)      Human-friendly date without time\n"
+        "  agendatime (at) Human-friendly date with time but without seconds\n"
+        "  week (w)        Monday through Sunday of current week\n"
+        "  bweek (bw)      Monday through Friday of current week (business week)\n"
     ))
 
     if len(sys.argv) > 1 and sys.argv[1] == "--help":
