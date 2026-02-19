@@ -33,6 +33,11 @@
 [init]
 	# Sets new repos to create the default branch as "main" instead of "master".
 	defaultBranch = main
+[diff]
+	# Likely an improvement over the default "myers", but has not yet been verified with hard data.
+	# Diffs should be more readable compared to the default "myers" but with a slight cost in performance.
+	# See https://arxiv.org/abs/1902.02467 in-favor of "histogram".
+	algorithm = histogram
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
