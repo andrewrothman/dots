@@ -44,6 +44,22 @@
 	# Should make handling conflicts easier.
 	# "zdiff3" vs "diff3" - zealously move common lines out of the conflict
 	conflictStyle = zdiff3
+
+	# Sets nvim as diff conflict resolution tool.
+	# Use with `git mergetool`.
+	tool = nvimdiff
+[mergetool "nvimdiff"]
+	# Configures the command to execute.
+	# -d opens all four files in diff mode
+	# $LOCAL is the current branch
+	# $REMOTE is the incoming branch
+	# $BASE is the common ancestor,
+	# $MERGED is the file Git will write after merge
+	# wincmd J moves windows to be stacked vertically.
+	# ...or wincmd H moves windows to be stacked horizontally.
+	# use `:diffget` or `:diffput` to pull changes between buffers.
+	cmd = nvim -d "$LOCAL" "$REMOTE" "$BASE" "$MERGED" -c 'wincmd J'
+	trustExitCode = true
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
