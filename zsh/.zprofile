@@ -36,9 +36,7 @@ if [ -x "/opt/homebrew/bin/brew" ]; then
 fi
 
 try_source "$HOME/.zprofile-nodejs"
-
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+try_source "$HOME/.zprofile-bun"
 
 export PLAN9=/Users/ajr/src/plan9port export PLAN9
 export PATH=$PATH:$PLAN9/bin:$HOME/.local/bin/acme

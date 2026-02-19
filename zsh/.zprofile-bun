@@ -1,0 +1,2 @@
+export BUN_INSTALL="$XDG_STATE_HOME/bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
