@@ -4,6 +4,7 @@
 [alias]
 	reword = "!git diff --cached --quiet && git commit --amend -n || (echo 'Staged changes present — reword aborted.' && exit 1)"
 	wip = "!git add -A && git commit -n -m 'WIP'"
+	diffs = "diff --staged"
 [commit]
 	verbose = true
 [branch]
