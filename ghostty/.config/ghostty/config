@@ -14,20 +14,10 @@ window-inherit-font-size = false
 window-padding-balance = true
 window-new-tab-position = end
 
-
-theme = "light:OneHalfLight,dark:0x96f"
-# theme = light:"3024 Day",dark:"3024 Night"
-# theme = "light:OneHalfLight,dark:Adventure"
-# theme = "Blazer"
-# theme = "Material"
-# theme = "dark:mellow,light:Material"
-# primary, Tomorrow, Terminal Basic, iTerm2 Tango Light, iceberg-light, CLRS
+theme = "light:Apple System Colors Light,dark:0x96f"
 
 font-family = "Monaspace Xenon"
-# font-family = "Atkinson Hyperlegible Mono"
-# font-family = "Vga Unicode"
-# font-family = "Departure Mono"
-# font-size: 14pt (because -3 is 11 and +3 is 17)
+# font-size: 14pt (because +3/-3 zoom are both usable - 17pt/14pt/11pt)
 font-size = 14
 font-style="Regular"
 # font-style="Bold"
