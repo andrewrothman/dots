@@ -1,3 +1,7 @@
+try_source() {
+    [ -f "$1" ] && source "$1"
+}
+
 # useful when optimizing zsh startup performance
 # export REPORTTIME=0
 
@@ -29,17 +33,10 @@ export PATH="$HOME/src/dots/bin:$PATH"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# show node.js pending deprecation warning logs
-# https://nodejs.org/docs/latest-v16.x/api/cli.html#node_pending_deprecation1
-# export NODE_PENDING_DEPRECATION=1
-
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
-export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+try_source "$HOME/.zprofile-nodejs"
 
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export PLAN9=/Users/ajr/src/plan9port export PLAN9
 export PATH=$PATH:$PLAN9/bin:$HOME/.local/bin/acme
