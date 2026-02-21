@@ -44,5 +44,6 @@ if [[ "$TERM_PROGRAM" == "win" ]]; then
 	PS1='zsh %# '
 fi
 
+try_source "$HOME/.zshrc-bun"
 
 
