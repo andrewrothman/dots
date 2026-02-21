@@ -838,6 +838,11 @@ vim.api.nvim_create_user_command('YankPath', function()
   vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
 
+
+vim.api.nvim_create_user_command("EditConfig", function()
+  vim.cmd("edit " .. vim.fn.stdpath("config") .. "/init.lua")
+end, {})
+
 -- TODO: lock lazy deps in dotfiles repo, like this - https://github.com/nvim-lua/kickstart.nvim/commit/5740ddcf9c89c616b114e0b6c39ac66f857d609b
 -- TODO: refactor telescope - https://github.com/nvim-lua/kickstart.nvim/commit/e87b7281ed19a49d528dec16dc0967616c1dc045
 -- TODO: https://github.com/nvim-lua/kickstart.nvim/commit/8c6b78c770e34f8b9cb028633403b85010f28d7e
