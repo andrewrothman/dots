@@ -1,0 +1,12 @@
+window-padding-x = 16
+window-padding-y = 18
+
+theme = "light:Apple System Colors Light,dark:0x96f"
+
+# font-size: 14pt (because +3/-3 zoom are both usable - 17pt/14pt/11pt)
+font-size = 14
+font-family = "Monaspace Xenon"
+font-style="Regular"
+# font-style="Bold"
+font-thicken=true
+# adjust-underline-position = 15%
