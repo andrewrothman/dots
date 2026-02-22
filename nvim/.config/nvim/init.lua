@@ -63,8 +63,6 @@ require('lazy').setup {
 
 -- TODO: try nacro90/numb.nvim
 -- TODO: lock lazy deps in dotfiles repo, like this - https://github.com/nvim-lua/kickstart.nvim/commit/5740ddcf9c89c616b114e0b6c39ac66f857d609b
--- TODO: refactor telescope - https://github.com/nvim-lua/kickstart.nvim/commit/e87b7281ed19a49d528dec16dc0967616c1dc045
--- TODO: https://github.com/nvim-lua/kickstart.nvim/commit/8c6b78c770e34f8b9cb028633403b85010f28d7e
 -- TODO: https://github.com/nvim-lua/kickstart.nvim/commit/7e54a4c5c80ccefa993777accbce97a20f5348cc
 -- TODO: https://github.com/nvim-lua/kickstart.nvim/commit/e79572c9e6978787af2bca164a85ab6821caeb7b
 
