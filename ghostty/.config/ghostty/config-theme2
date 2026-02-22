@@ -1,0 +1,12 @@
+window-padding-x = 28
+window-padding-y = 28
+
+theme = "Black Metal (Dark Funeral)"
+
+font-family = "Monaspace Neon"
+# font-size: 14pt (because -3 is 11 and +3 is 17)
+font-size = 14
+font-style="Regular"
+# font-style="Bold"
+font-thicken=true
+# adjust-underline-position = 15%
