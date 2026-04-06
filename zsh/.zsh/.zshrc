@@ -9,7 +9,7 @@ zstyle ':completion:*' menu select
 # brew install zsh-vi-mode
 source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
-PROMPT='=> zsh !%! ?%? %n [%~] $ '
+PS1='%n@%m [%~] $ '
 
 alias v=nvim
 alias vv='nvim .'
