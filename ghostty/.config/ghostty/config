@@ -33,3 +33,4 @@ window-inherit-working-directory=false
 window-step-resize = true
 
 config-file = "config-theme1"
+config-file = "?config-local"
