@@ -46,3 +46,4 @@ if [[ "$TERM_PROGRAM" == "win" ]]; then
 fi
 
 try_source "$HOME/.zsh/.zshrc-bun"
+try_source "$HOME/.zsh/.zshrc-local"

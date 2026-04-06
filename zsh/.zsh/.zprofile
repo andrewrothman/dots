@@ -40,3 +40,5 @@ try_source "$HOME/.zsh/.zprofile-bun"
 
 export PLAN9=/Users/ajr/src/plan9port export PLAN9
 export PATH=$PATH:$PLAN9/bin:$HOME/.local/bin/acme
+
+try_source "$HOME/.zsh/.zprofile-local"
