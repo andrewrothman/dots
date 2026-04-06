@@ -27,10 +27,6 @@ function tmp {
 	pushd $(mktemp -d -t tmp.$1)
 }
 
-function rsa-genkeypair() { openssl genrsa -out $1.pem 4096; openssl rsa -pubout -in $1.pem -out $1.pub.pem }
-function rsa-enc() { openssl pkeyutl -encrypt -pubin -inkey $1 | base64 }
-function rsa-dec() { base64 -d | openssl pkeyutl -decrypt -inkey $1 }
-
 # opens a manpage in Preview.app
 function prevman() {
 	mandoc -T pdf "$(/usr/bin/man -w $@)" | open -fa Preview

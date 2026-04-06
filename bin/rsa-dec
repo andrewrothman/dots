@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Decrypt base64-encoded stdin using private key
+# Usage: rsa-dec.sh <private_key.pem>
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <private_key.pem>" >&2
+    exit 1
+fi
+
+PRIVKEY=$1
+
+base64 -d | openssl pkeyutl -decrypt -inkey "$PRIVKEY"

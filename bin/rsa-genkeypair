@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Generate RSA private/public key pair (4096-bit)
+# Usage: rsa-genkeypair.sh <keyname>
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <keyname>" >&2
+    exit 1
+fi
+
+KEYNAME=$1
+
+openssl genrsa -out "${KEYNAME}.pem" 4096 || exit 1
+openssl rsa -pubout -in "${KEYNAME}.pem" -out "${KEYNAME}.pub.pem"
