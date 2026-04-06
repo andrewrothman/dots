@@ -32,11 +32,11 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/src/dots/bin:$PATH"
 
 if [ -x "/opt/homebrew/bin/brew" ]; then
-    try_source "$HOME/.zprofile-brew"
+    try_source "$HOME/.zsh/.zprofile-brew"
 fi
 
-try_source "$HOME/.zprofile-nodejs"
-try_source "$HOME/.zprofile-bun"
+try_source "$HOME/.zsh/.zprofile-nodejs"
+try_source "$HOME/.zsh/.zprofile-bun"
 
 export PLAN9=/Users/ajr/src/plan9port export PLAN9
 export PATH=$PATH:$PLAN9/bin:$HOME/.local/bin/acme

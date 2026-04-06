@@ -1,7 +1,7 @@
 setopt interactivecomments
 
 # case-insensitive path completion
-autoload -Uz +X compinit && compinit
+autoload -Uz +X compinit && mkdir -p $HOME/.zsh && compinit -d $HOME/.zsh/zcompdump
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
@@ -45,6 +45,4 @@ if [[ "$TERM_PROGRAM" == "win" ]]; then
 	PS1='zsh %# '
 fi
 
-try_source "$HOME/.zshrc-bun"
-
-
+try_source "$HOME/.zsh/.zshrc-bun"
