@@ -29,4 +29,6 @@ notify-on-command-finish-action = notify
 # mouse-scroll-multiplier = 2
 # selection-background = "#00FFFF"
 
+window-inherit-working-directory=false
+
 config-file = "config-theme1"
