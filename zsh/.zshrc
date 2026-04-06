@@ -1,5 +1,10 @@
 setopt interactivecomments
 
+# case-insensitive path completion
+autoload -Uz +X compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
+
 # https://github.com/jeffreytse/zsh-vi-mode
 # brew install zsh-vi-mode
 source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
