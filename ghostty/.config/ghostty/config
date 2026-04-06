@@ -30,5 +30,6 @@ notify-on-command-finish-action = notify
 # selection-background = "#00FFFF"
 
 window-inherit-working-directory=false
+window-step-resize = true
 
 config-file = "config-theme1"
