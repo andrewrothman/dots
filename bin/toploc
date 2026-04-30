@@ -1,0 +1,35 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+  cat <<EOF
+Usage: toploc [fd-options] [path]
+
+Shows the largest files by line count.
+
+Options:
+  -n NUM   number of results to show (default: 20)
+
+Examples:
+  toploc                       # all files from current dir
+  toploc -n 10                 # show top 10
+  toploc -e ts -n 100          # top 100 TypeScript files
+  toploc src                   # only files under src/
+  toploc -e ts                 # only TypeScript files
+  toploc -e ts src             # TypeScript files under src/
+EOF
+  exit 0
+fi
+
+N=20
+ARGS=""
+while [ $# -gt 0 ]; do
+  if [ "$1" = "-n" ]; then
+    N=$2
+    shift 2
+  else
+    ARGS="$ARGS $1"
+    shift
+  fi
+done
+
+fd $ARGS -t file -X wc -l | sort -n -r | head -"$N"
