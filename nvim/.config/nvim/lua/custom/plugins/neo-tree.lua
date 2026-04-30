@@ -12,6 +12,12 @@ return {
       { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
     },
     opts = {
+      window = {
+        mappings = {
+          -- disable <space>, default is 'toggle_node' which is unnecessary and conflicts with leader
+          ['<space>'] = 'none',
+        },
+      },
       filesystem = {
         window = {
           mappings = {
