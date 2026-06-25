@@ -7,7 +7,7 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = false
 
 -- [[ Setting options ]]
--- see `:help vim.o`, `:help option-list`
+--  see `:help vim.o`, `:help option-list`
 
 vim.o.number = true
 vim.o.relativenumber = true

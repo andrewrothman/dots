@@ -1,3 +1,5 @@
+---@module 'lazy'
+---@type LazySpec
 return {
   -- { 't184256/vim-boring' },
   -- { url = 'https://git.sr.ht/~romainl/vim-bruin' },

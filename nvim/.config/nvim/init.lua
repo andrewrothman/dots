@@ -10,7 +10,7 @@ Lua help:
   - :help lua-guide
   - (or HTML version): https://neovim.io/doc/user/lua-guide.html
 
-Up-to-date as of kickstart.nvim commit 6ba2408cdf5eb7a0e4b62c7d6fab63b64dd720f6
+Up-to-date as of kickstart.nvim commit cd7adee3cebd9cc915bbe69db5472b7da479e001
 
 --]]
 
@@ -52,7 +52,7 @@ require('lazy').setup {
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommended keymaps
 
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
