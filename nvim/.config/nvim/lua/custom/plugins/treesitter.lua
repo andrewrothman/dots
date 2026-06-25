@@ -5,26 +5,39 @@ return {
     lazy = false,
     build = ':TSUpdate',
     config = function()
-      local filetypes = {
-        'bash',
-        'c',
-        'cpp',
-        'go',
-        'diff',
-        'html',
-        'lua',
-        'luadoc',
-        'python',
-        'rust',
-        'tsx',
-        'typescript',
-        'markdown',
-        'markdown_inline',
-        'query',
-        'vim',
-        'vimdoc',
+      local filetype_to_parser = {
+        bash = 'bash',
+        c = 'c',
+        cpp = 'cpp',
+        diff = 'diff',
+        go = 'go',
+        html = 'html',
+        janet = 'janet_simple',
+        lua = 'lua',
+        luadoc = 'luadoc',
+        markdown = 'markdown',
+        markdown_inline = 'markdown_inline',
+        python = 'python',
+        query = 'query',
+        rust = 'rust',
+        tsx = 'tsx',
+        typescript = 'typescript',
+        vim = 'vim',
+        vimdoc = 'vimdoc',
       }
-      require('nvim-treesitter').install(filetypes)
+
+      local parsers = {}
+      local filetypes = {}
+      for ft, parser in pairs(filetype_to_parser) do
+        table.insert(filetypes, ft)
+        table.insert(parsers, parser)
+        if parser ~= ft then
+          vim.treesitter.language.register(parser, ft)
+        end
+      end
+
+      require('nvim-treesitter').install(parsers)
+
       vim.api.nvim_create_autocmd('FileType', {
         pattern = filetypes,
         callback = function()
