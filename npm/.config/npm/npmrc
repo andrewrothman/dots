@@ -3,3 +3,4 @@ init-license = "UNLICENSED"
 init-private = true
 
 min-release-age = 7
+ignore-scripts = true
