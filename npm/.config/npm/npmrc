@@ -1,3 +1,5 @@
 init-version = "0.1.0"
 init-license = "UNLICENSED"
+init-private = true
+
 min-release-age = 7
