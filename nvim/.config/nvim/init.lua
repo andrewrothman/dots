@@ -1,6 +1,9 @@
 --[[
 
-NeoVim help:
+Neovim config based on kickstart.nvim:
+https://github.com/nvim-lua/kickstart.nvim
+
+Neovim help:
   - :help
   - <leader>sh - search help
   - :checkhealth
@@ -10,7 +13,8 @@ Lua help:
   - :help lua-guide
   - (or HTML version): https://neovim.io/doc/user/lua-guide.html
 
-Up-to-date as of kickstart.nvim commit cd7adee3cebd9cc915bbe69db5472b7da479e001
+Up-to-date as of kickstart.nvim commit SHA:
+f0a2108ed51547793c758d9318bad94f242b22e5
 
 --]]
 
@@ -18,53 +22,75 @@ require("custom.options")
 require("custom.keymaps")
 require("custom.autocommands")
 
-require("custom.commands.edit-config")
-require("custom.commands.yank-path")
+do
+  -- [[ Intro to `vim.pack` ]]
+  -- `vim.pack` is a new plugin manager built into Neovim,
+  --  which provides a Lua interface for installing and managing plugins.
+  --
+  --  See `:help vim.pack`, `:help vim.pack-examples` or the
+  --  excellent blog post from the creator of vim.pack and mini.nvim:
+  --  https://echasnovski.com/blog/2026-03-13-a-guide-to-vim-pack
+  --
+  --  To inspect plugin state and pending updates, run
+  --    :lua vim.pack.update(nil, { offline = true })
+  --
+  --  To update plugins, run
+  --    :lua vim.pack.update()
 
--- [[ Install `lazy.nvim` plugin manager ]]
---    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
-  if vim.v.shell_error ~= 0 then
-    error('Error cloning lazy.nvim:\n' .. out)
+  local function run_build(name, cmd, cwd)
+    local result = vim.system(cmd, { cwd = cwd }):wait()
+    if result.code ~= 0 then
+      local stderr = result.stderr or ''
+      local stdout = result.stdout or ''
+      local output = stderr ~= '' and stderr or stdout
+      if output == '' then output = 'No output from build command.' end
+      vim.notify(('Build failed for %s:\n%s'):format(name, output), vim.log.levels.ERROR)
+    end
   end
+
+  -- This autocommand runs after a plugin is installed or updated and
+  --  runs the appropriate build command for that plugin if necessary.
+  --
+  -- See `:help vim.pack-events`
+  vim.api.nvim_create_autocmd('PackChanged', {
+    callback = function(ev)
+      local name = ev.data.spec.name
+      local kind = ev.data.kind
+      if kind ~= 'install' and kind ~= 'update' then return end
+
+      if name == 'telescope-fzf-native.nvim' and vim.fn.executable 'make' == 1 then
+        run_build(name, { 'make' }, ev.data.path)
+        return
+      end
+
+      if name == 'LuaSnip' then
+        if vim.fn.has 'win32' ~= 1 and vim.fn.executable 'make' == 1 then run_build(name, { 'make', 'install_jsregexp' }, ev.data.path) end
+        return
+      end
+
+      if name == 'nvim-treesitter' then
+        if not ev.data.active then vim.cmd.packadd 'nvim-treesitter' end
+        vim.cmd 'TSUpdate'
+        return
+      end
+    end,
+  })
 end
 
----@type vim.Option
-local rtp = vim.opt.rtp
-rtp:prepend(lazypath)
+require("custom.plugins.guess-indent")
+require("custom.plugins.git")
+require("custom.plugins.which-key")
+require("custom.plugins.mini")
+require("custom.plugins.telescope")
+require("custom.plugins.lsp")
+require("custom.plugins.format")
+require("custom.plugins.autocomplete")
+require("custom.plugins.treesitter")
+require("custom.plugins.lint")
+require("custom.plugins.neo-tree")
 
--- see ":Lazy" and ":Lazy update"
-require('lazy').setup {
-  -- NOTE: Plugins can be added via a link or github org/name. To run setup automatically, use `opts = {}`
-
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    This is the easiest way to modularize your config.
-  --
-  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  { import = 'custom.plugins' },
-
-  -- TODO: try:
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommended keymaps
-
-  --
-  -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
-  -- Or use telescope!
-  -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
-  -- you can continue same window with `<space>sr` which resumes last telescope search
-}
-
--- TODO: try nacro90/numb.nvim
--- TODO: lock lazy deps in dotfiles repo, like this - https://github.com/nvim-lua/kickstart.nvim/commit/5740ddcf9c89c616b114e0b6c39ac66f857d609b
--- TODO: https://github.com/nvim-lua/kickstart.nvim/commit/7e54a4c5c80ccefa993777accbce97a20f5348cc
--- TODO: https://github.com/nvim-lua/kickstart.nvim/commit/e79572c9e6978787af2bca164a85ab6821caeb7b
+require("custom.commands.edit-config")
+require("custom.commands.yank-path")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

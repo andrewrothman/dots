@@ -1,63 +1,28 @@
----@module 'lazy'
----@type LazySpec
-return {
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-web-devicons",
-    },
-    lazy = false,
-    keys = {
-      { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
-    },
-    ---@module 'neo-tree'
-    ---@type neotree.Config
-    opts = {
-      window = {
-        mappings = {
-          -- disable <space>, default is 'toggle_node' which is unnecessary and conflicts with leader
-          ['<space>'] = 'none',
-        },
-      },
-      filesystem = {
-        window = {
-          mappings = {
-            ['\\'] = 'close_window',
-          },
-        },
+local utils = require('custom.utils')
+
+vim.pack.add { utils.gh 'mfussenegger/nvim-lint' }
+
+vim.pack.add {
+  { src = utils.gh 'nvim-neo-tree/neo-tree.nvim', version = vim.version.range '*' },
+  utils.gh 'nvim-lua/plenary.nvim',
+  utils.gh 'MunifTanjim/nui.nvim',
+}
+
+vim.keymap.set('n', '\\', '<Cmd>Neotree reveal<CR>', { desc = 'NeoTree reveal', silent = true })
+
+require('neo-tree').setup {
+  filesystem = {
+    window = {
+      mappings = {
+        -- TODO: old, still needed?
+        -- disable <space>, default is 'toggle_node' which is unnecessary and conflicts with leader
+        -- ['<space>'] = 'none',
+
+        ['\\'] = 'close_window',
       },
     },
-  },
-  {
-    "antosha417/nvim-lsp-file-operations",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-neo-tree/neo-tree.nvim", -- makes sure that this loads after Neo-tree.
-    },
-    config = function()
-      require("lsp-file-operations").setup()
-    end,
-  },
-  {
-    "s1n7ax/nvim-window-picker",
-    version = "2.*",
-    config = function()
-      require("window-picker").setup({
-        filter_rules = {
-          include_current_win = false,
-          autoselect_one = true,
-          -- filter using buffer options
-          bo = {
-            -- if the file type is one of following, the window will be ignored
-            filetype = { "neo-tree", "neo-tree-popup", "notify" },
-            -- if the buffer type is one of following, the window will be ignored
-            buftype = { "terminal", "quickfix" },
-          },
-        },
-      })
-    end,
   },
 }
+
+-- The line beneath this is called `modeline`. See `:help modeline`
+-- vim: ts=2 sts=2 sw=2 et
