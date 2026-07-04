@@ -9,8 +9,8 @@ local utils = require('custom.utils')
 vim.pack.add { { src = utils.gh 'nvim-treesitter/nvim-treesitter', version = 'main' } }
 
 -- Ensure basic parsers are installed
--- TODO: old, needed? ... typescript, tsx, janet_simple, python, go, cpp, rust
-local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
+-- TODO: old, needed? ... janet_simple, python, go, cpp, rust
+local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'typescript', 'tsx', 'javascript' }
 require('nvim-treesitter').install(parsers)
 
 ---@param buf integer

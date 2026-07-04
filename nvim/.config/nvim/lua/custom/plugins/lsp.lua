@@ -157,9 +157,9 @@ require('mason').setup {}
 -- You can press `g?` for help in this menu.
 local ensure_installed = vim.tbl_keys(servers or {})
 vim.list_extend(ensure_installed, {
-  -- NOTE: old, do we need to list these here?
   -- 'lua_ls', -- Lua Language server
-  -- 'tree-sitter-cli',
+  'tree-sitter-cli',
+  'eslint_d',
   -- 'stylua', -- Used to format Lua code
 
   -- You can add other tools here that you want Mason to install
