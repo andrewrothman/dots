@@ -108,8 +108,6 @@ cask "appcleaner"
 cask "bitwarden"
 # Virtual Audio Driver
 cask "blackhole-2ch"
-# Web browser focusing on privacy
-cask "brave-browser"
 # Utility that prevents the system from going to sleep
 cask "domzilla-caffeine"
 # Offline voice-to-text dictation app with AI enhancement
