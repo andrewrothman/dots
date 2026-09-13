@@ -1,6 +1,10 @@
+; NOTE: create a $HOME/.config/git/config-local file for local overrides
+; Set the user name and email there.
+
 ; [user]
 ; 	name = ...
 ; 	email = ...
+
 [alias]
 	reword = "!git diff --cached --quiet && git commit --amend -n || (echo 'Staged changes present — reword aborted.' && exit 1)"
 	wip = "!git add -A && git commit -n -m 'WIP'"
@@ -66,5 +70,9 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 
+[include]
+	path = ~/.config/git/config-local
+
 ; [includeIf "gitdir:~/example/"]
 ; 	path = ~/.config/git/config-example
+
