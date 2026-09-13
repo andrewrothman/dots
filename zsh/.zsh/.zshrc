@@ -1,7 +1,7 @@
 setopt interactivecomments
 
 # case-insensitive path completion
-autoload -Uz +X compinit && mkdir -p $HOME/.zsh && compinit -d $HOME/.zsh/zcompdump
+autoload -Uz +X compinit && mkdir -p $HOME/.zsh && compinit -d $HOME/.zsh/.zcompdump
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
