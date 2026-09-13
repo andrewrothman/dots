@@ -1,0 +1,21 @@
+#!/bin/sh
+# git-new: create a new directory and initialize it as a git repo with an empty initial commit
+
+set -e
+
+if [ -z "$1" ]; then
+    echo "Usage: git-new <dir>" >&2
+    exit 1
+fi
+
+if [ -e "$1" ]; then
+    echo "Error: '$1' already exists" >&2
+    exit 1
+fi
+
+mkdir -p "$1"
+cd "$1"
+git init -q
+git commit --allow-empty -m "Initial commit"
+
+echo "Created git repo in $1"
