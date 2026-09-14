@@ -37,7 +37,10 @@ fi
 try_source "$HOME/.zsh/.zprofile-nodejs"
 try_source "$HOME/.zsh/.zprofile-bun"
 
-export PLAN9=/Users/ajr/src/plan9port export PLAN9
-export PATH=$PATH:$PLAN9/bin:$HOME/.local/bin/acme
+export PLAN9="$HOME/src/plan9port"
+if [ -d "$PLAN9" ]; then
+    PATH="$PATH:$PLAN9/bin"
+    PATH="$PATH:$HOME/.local/bin/acme"
+fi
 
 try_source "$HOME/.zsh/.zprofile-local"
