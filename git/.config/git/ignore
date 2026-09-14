@@ -1,1 +1,5 @@
+# macos junk dir
 .DS_Store
+
+# for local files to keep untracked in git
+.local/
