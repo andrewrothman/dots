@@ -14,7 +14,7 @@ Lua help:
   - (or HTML version): https://neovim.io/doc/user/lua-guide.html
 
 Up-to-date as of kickstart.nvim commit SHA:
-f0a2108ed51547793c758d9318bad94f242b22e5
+748f67f49dd9fed47686d1d15e8566d2cba8ed35
 
 --]]
 
