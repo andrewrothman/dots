@@ -1,13 +1,19 @@
 # dotfiles
 
-```bash
+## Requirements
+
+- just
+- gnu stow
+
+- homebrew
+- zsh
+
+## Install + Setup
+
+```sh
 mkdir -p $HOME/src
 git clone git@github.com:andrewrothman/dots.git $HOME/src/dots
 cd $HOME/src/dots
 
-stow zsh -t ~
-stow nvim -t ~
-stow tmux -t ~
-stow git -t ~
-stow ghostty -t ~
+just link
 ```
