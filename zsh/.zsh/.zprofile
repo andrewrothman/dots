@@ -1,7 +1,3 @@
-try_source() {
-    [ -f "$1" ] && source "$1"
-}
-
 # useful when optimizing zsh startup performance
 # export REPORTTIME=0
 
@@ -37,7 +33,6 @@ fi
 try_source "$HOME/.zsh/.zprofile-nodejs"
 try_source "$HOME/.zsh/.zprofile-bun"
 
-export PLAN9="$HOME/src/plan9port"
 if [ -d "$PLAN9" ]; then
     PATH="$PATH:$PLAN9/bin"
     PATH="$PATH:$HOME/.local/bin/acme"
