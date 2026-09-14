@@ -29,7 +29,6 @@ export LANG="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/src/dots/bin:$PATH"
 
 if [ -x "/opt/homebrew/bin/brew" ]; then
     try_source "$HOME/.zsh/.zprofile-brew"
