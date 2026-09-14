@@ -1,0 +1,17 @@
+### Helix configuration
+
+## Seems latest `master` supports light/dark themes, but not latest stable.
+# theme = "ao"
+theme = "carbonfox"
+
+[editor]
+auto-pairs = false
+
+[editor.soft-wrap]
+enable = true
+
+### Keymaps
+[keys.normal.space]
+## This keybind is useful when working with coding agents, but watch out -
+## it will discard unsaved changes.
+R = ":reload-all"

@@ -7,6 +7,7 @@ link:
 	stow --no-folding -t "$HOME" scripts
 	stow -t "$HOME" ghostty
 	stow -t "$HOME" git
+	stow -t "$HOME" helix
 	stow -t "$HOME" npm
 	stow -t "$HOME" nvim
 	stow -t "$HOME" tmux
