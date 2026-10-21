@@ -1,7 +1,8 @@
 #!/bin/sh
 
-# Encrypt stdin using a public key
-# Usage: rsa-enc.sh <public_key.pem>
+# Encrypts stdin with the recipient's RSA public key.
+# Usage: cat file | rsa-enc <path-to-public-key.pub.pem> > file.enc
+# Example: cat file | rsa-enc filesharing.andrew.pub.pem > file.andrew.enc
 
 if [ "$#" -ne 1 ]; then
     echo "Usage: $0 <public_key.pem>" >&2
