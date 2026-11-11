@@ -2,6 +2,7 @@ local utils = require('custom.utils')
 
 --  A collection of various small independent plugins/modules
 vim.pack.add { utils.gh 'nvim-mini/mini.nvim' }
+require('mini.notify').setup()
 
 -- If a nerd font is available, load the icons module for pretty icons in various plugins.
 if vim.g.have_nerd_font then
