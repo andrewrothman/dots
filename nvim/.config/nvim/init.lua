@@ -82,7 +82,6 @@ require("custom.plugins.format")
 require("custom.plugins.autocomplete")
 require("custom.plugins.treesitter")
 require("custom.plugins.lint")
-require("custom.plugins.neo-tree")
 
 require("custom.commands.edit-config")
 require("custom.commands.yank-path")

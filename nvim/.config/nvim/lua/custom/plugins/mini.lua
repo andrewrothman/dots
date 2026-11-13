@@ -4,6 +4,15 @@ local utils = require('custom.utils')
 vim.pack.add { utils.gh 'nvim-mini/mini.nvim' }
 require('mini.notify').setup()
 
+local files = require('mini.files')
+files.setup()
+local function toggle_files()
+  if files.close() ~= nil then return end
+  local path = vim.api.nvim_buf_get_name(0)
+  files.open(vim.uv.fs_stat(path) and path or nil)
+end
+vim.keymap.set('n', '<leader>e', toggle_files, { desc = 'Toggle file [E]xplorer', silent = true })
+
 -- If a nerd font is available, load the icons module for pretty icons in various plugins.
 if vim.g.have_nerd_font then
   require('mini.icons').setup()
