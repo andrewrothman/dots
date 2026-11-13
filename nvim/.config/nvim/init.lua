@@ -57,7 +57,6 @@ end
 
 require("custom.plugins.guess-indent")
 require("custom.plugins.git")
-require("custom.plugins.which-key")
 require("custom.plugins.mini")
 require("custom.plugins.pick")
 require("custom.plugins.lsp")

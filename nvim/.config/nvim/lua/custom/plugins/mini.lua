@@ -13,6 +13,37 @@ local function toggle_files()
 end
 vim.keymap.set('n', '<leader>e', toggle_files, { desc = 'Toggle file [E]xplorer', silent = true })
 
+local clue = require('mini.clue')
+clue.setup {
+  triggers = {
+    { mode = { 'n', 'x' }, keys = '<leader>' },
+    { mode = { 'n', 'x' }, keys = 'g' },
+    { mode = { 'n', 'x' }, keys = 'z' },
+    { mode = 'n', keys = '[' },
+    { mode = 'n', keys = ']' },
+    { mode = 'n', keys = '<C-w>' },
+    { mode = { 'n', 'x' }, keys = "'" },
+    { mode = { 'n', 'x' }, keys = '`' },
+    { mode = { 'n', 'x' }, keys = '"' },
+    { mode = { 'i', 'c' }, keys = '<C-r>' },
+    { mode = 'i', keys = '<C-x>' },
+  },
+  clues = {
+    clue.gen_clues.g(),
+    clue.gen_clues.z(),
+    clue.gen_clues.windows(),
+    clue.gen_clues.square_brackets(),
+    clue.gen_clues.marks(),
+    clue.gen_clues.registers(),
+    clue.gen_clues.builtin_completion(),
+    { mode = { 'n', 'x' }, keys = '<leader>s', desc = '[S]earch' },
+    { mode = 'n', keys = '<leader>t', desc = '[T]oggle' },
+    { mode = { 'n', 'x' }, keys = '<leader>h', desc = 'Git [H]unk' },
+    { mode = 'n', keys = 'gr', desc = 'LSP Actions' },
+  },
+  window = { delay = 0 },
+}
+
 -- If a nerd font is available, load the icons module for pretty icons in various plugins.
 if vim.g.have_nerd_font then
   require('mini.icons').setup()
