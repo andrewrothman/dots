@@ -3,6 +3,7 @@ local utils = require('custom.utils')
 --  A collection of various small independent plugins/modules
 vim.pack.add { utils.gh 'nvim-mini/mini.nvim' }
 require('mini.notify').setup()
+require('mini.completion').setup()
 
 local files = require('mini.files')
 files.setup()

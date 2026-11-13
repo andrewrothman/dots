@@ -133,6 +133,8 @@ vim.list_extend(ensure_installed, {
 
 require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
+vim.lsp.config('*', { capabilities = require('mini.completion').get_lsp_capabilities() })
+
 for name, server in pairs(servers) do
   vim.lsp.config(name, server)
   vim.lsp.enable(name)

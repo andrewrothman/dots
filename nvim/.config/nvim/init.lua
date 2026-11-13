@@ -61,7 +61,6 @@ require("custom.plugins.mini")
 require("custom.plugins.pick")
 require("custom.plugins.lsp")
 require("custom.plugins.format")
-require("custom.plugins.autocomplete")
 require("custom.plugins.treesitter")
 require("custom.plugins.lint")
 
